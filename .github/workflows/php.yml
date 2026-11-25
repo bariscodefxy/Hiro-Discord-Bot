@@ -35,7 +35,7 @@ jobs:
       run: composer install --prefer-dist --no-progress
 
     - name: Check PHP syntax errors
-      uses: overtrue/phplint@9.4.1
+      run: find bot.php run.php src tests -name '*.php' -print0 | xargs -0 -n1 -P4 php -l
 
     - name: Run test suite
       run: composer run-script test
