@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,11 @@
  * limitations under the License.
  */
 
-namespace novaguard\security;
+namespace hiro\security;
 
 use Discord\Builders\MessageBuilder;
-use novaguard\interfaces\SecurityCommandInterface;
-use novaguard\commands\Command;
+use hiro\interfaces\SecurityCommandInterface;
+use hiro\commands\Command;
 use Discord\Parts\Interactions\Interaction;
 use Discord\Parts\Channel\Message;
 

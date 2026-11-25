@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,14 +18,14 @@
  * limitations under the License.
  */
 
-namespace novaguard\commands;
+namespace hiro\commands;
 
-use novaguard\interfaces\CommandInterface;
-use novaguard\interfaces\NovaGuardInterface;
+use hiro\interfaces\CommandInterface;
+use hiro\interfaces\HiroInterface;
 use Discord\Discord;
 use Discord\Helpers\Collection;
-use novaguard\parts\CommandLoader;
-use novaguard\parts\Respondable;
+use hiro\parts\CommandLoader;
+use hiro\parts\Respondable;
 
 /**
  * Command
@@ -70,7 +70,7 @@ class Command implements CommandInterface {
     /**
      * CommandLoader
      *
-     * @var \novaguard\parts\CommandLoader
+     * @var \hiro\parts\CommandLoader
      */
     public $loader;
 
@@ -91,7 +91,7 @@ class Command implements CommandInterface {
     /**
      * __construct
      */
-    public function __construct(NovaGuardInterface $client, CommandLoader $loader)
+    public function __construct(HiroInterface $client, CommandLoader $loader)
     {
         $this->discord = $client;
         $this->loader = $loader;

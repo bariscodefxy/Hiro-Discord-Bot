@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,17 +18,17 @@
  * limitations under the License.
  */
 
-namespace novaguard;
+namespace hiro;
 
 use Discord\Discord;
-use novaguard\interfaces\NovaGuardInterface;
-use novaguard\parts\Command;
-use novaguard\database\Database;
+use hiro\interfaces\HiroInterface;
+use hiro\parts\Command;
+use hiro\database\Database;
 use Discord\Parts\Embed\Embed;
 use Discord\WebSockets\Intents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class NovaGuard extends Discord implements NovaGuardInterface
+class Hiro extends Discord implements HiroInterface
 {
     /**
      * An array of options passed to the client.
@@ -94,7 +94,7 @@ class NovaGuard extends Discord implements NovaGuardInterface
                 }
 
                 if ($withoutPrefix = $this->checkForPrefix($message->content)) {
-                    $args = str_getcsv($withoutPrefix, ' ');
+                    $args = str_getcsv($withoutPrefix, ' ', '"', '\\');
                     $command = array_shift($args);
 
                     if ($command !== null && $this->commandClientOptions['caseInsensitiveCommands']) {
@@ -462,7 +462,7 @@ class NovaGuard extends Discord implements NovaGuardInterface
                 'shardCount' => 1,
                 'loadAllMembers' => false,
                 'intents' => Intents::getDefaultIntents(),
-                'logger' => new \Monolog\Logger('novaguard-log')
+                'logger' => new \Monolog\Logger('hiro-log')
             ]);
 
         $options = $resolver->resolve($options);

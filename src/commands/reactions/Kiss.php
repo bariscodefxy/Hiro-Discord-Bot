@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-namespace novaguard\commands;
+namespace hiro\commands;
 
 use Discord\Helpers\Collection;
 use Discord\Parts\Embed\Embed;
@@ -60,13 +60,13 @@ class Kiss extends Command
     {
         global $language;
         $gifs = [
-            "https://bariscodefxy.github.io/cdn/novaguard/kiss.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/kiss_1.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/kiss_2.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/kiss_3.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/kiss_4.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/kiss_5.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/kiss_6.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/kiss.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/kiss_1.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/kiss_2.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/kiss_3.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/kiss_4.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/kiss_5.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/kiss_6.gif",
         ];
         $random = $gifs[rand(0, sizeof($gifs) - 1)];
         $self = $msg->author;

@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,10 @@
  * limitations under the License.
  */
 
-namespace novaguard\parts;
+namespace hiro\parts;
 
-use novaguard\interfaces\PresenceManagerInterface;
-use novaguard\interfaces\NovaGuardInterface;
+use hiro\interfaces\PresenceManagerInterface;
+use hiro\interfaces\HiroInterface;
 use Discord\Parts\User\Activity;
 
 class PresenceManager implements PresenceManagerInterface
@@ -33,7 +33,7 @@ class PresenceManager implements PresenceManagerInterface
     /** timer */
     public $looptime;
     
-    /** HiroInterace */
+    /** HiroInterface */
     public $discord;
     
     /** current presence */
@@ -45,9 +45,9 @@ class PresenceManager implements PresenceManagerInterface
     /**
       * Constructor function
       *
-      * @param NovaGuardInterface discord
+      * @param HiroInterface discord
       */
-    public function __construct(NovaGuardInterface $discord)
+    public function __construct(HiroInterface $discord)
     {
         $this->discord = $discord;
         return $this;

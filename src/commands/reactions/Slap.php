@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-namespace novaguard\commands;
+namespace hiro\commands;
 
 use Discord\Helpers\Collection;
 use Discord\Parts\Embed\Embed;
@@ -60,12 +60,12 @@ class Slap extends Command
     {
         global $language;
         $gifs = [
-            "https://bariscodefxy.github.io/cdn/novaguard/slap.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/slap_1.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/slap_2.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/slap_3.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/slap_4.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/slap_5.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/slap.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/slap_1.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/slap_2.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/slap_3.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/slap_4.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/slap_5.gif",
         ];
         $random = $gifs[rand(0, sizeof($gifs) - 1)];
         $self = $msg->author;

@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  *
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,11 @@
  * limitations under the License.
  */
 
-namespace novaguard\database;
+namespace hiro\database;
 
-use novaguard\consts\RPG;
+use hiro\consts\RPG;
 use PDO;
 use PDOException;
-use bariscodefx\PHPHashMap\HashMap;
 
 /**
  * Database
@@ -36,13 +35,6 @@ class Database extends PDO
      * @var boolean
      */
     public $isConnected = false;
-
-    /**
-     * Hashmap of cached users for checking bot ban
-     *
-     * @var HashMap
-     */
-    private HashMap $cachedUsers;
 
     /**
      * __construct
@@ -60,7 +52,6 @@ class Database extends PDO
         }
         $this->isConnected = true;
         $this->createTables();
-        $this->cachedUsers = new HashMap();
     }
 
     /**
@@ -746,7 +737,6 @@ class Database extends PDO
      */
     public function banUserFromBot(int $discord_id): ?\PDOStatement
     {
-        $this->cachedUsers->set((string)$discord_id, true);
         return $this->query(
             sprintf("INSERT INTO bans SET discord_id = %d", $discord_id)
         );
@@ -760,7 +750,6 @@ class Database extends PDO
      */
     public function unbanUserFromBot(int $discord_id): ?\PDOStatement
     {
-        $this->cachedUsers->set((string)$discord_id, false);
     	   return $this->query(
             sprintf("DELETE FROM bans WHERE discord_id = %d", $discord_id)
         );
@@ -774,16 +763,11 @@ class Database extends PDO
      */
     public function isUserBannedFromBot(int $discord_id): bool
     {
-        if ($this->cachedUsers->get((string)$discord_id))
-        {
-            return true;
-        }
         $banned = $this->query(
             sprintf(
                 "SELECT * FROM bans WHERE discord_id = %d", $discord_id
             )
         )->fetch() ? true : false;
-        $this->cachedUsers->set((string)$discord_id, $banned);
         return $banned;
     }
 

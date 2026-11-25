@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-namespace novaguard\commands;
+namespace hiro\commands;
 
 use Discord\Parts\Embed\Embed;
 
@@ -53,7 +53,7 @@ class Git extends Command
         $embed = new Embed($this->discord);
         $embed->setColor("#ff0000");
         $embed->setTitle("Git (Github)");
-        $embed->setURL("https://github.com/novaguard-team/novaguard-bot.git");
+        $embed->setURL("https://github.com/bariscodefxy/Hiro-Discord-Bot.git");
         $embed->setDescription($language->getTranslator()->trans('commands.git.description'));
         $embed->setTimestamp();
         $msg->reply($embed);

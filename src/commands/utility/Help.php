@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-namespace novaguard\commands;
+namespace hiro\commands;
 
 use Discord\Helpers\Collection;
 use Discord\Parts\Embed\Embed;
@@ -104,10 +104,10 @@ EOF
             sprintf(
                 $language->getTranslator()->trans('commands.help.description'),
                 $prefix,
-                "[Github](https://github.com/novaguard-team/novaguard-bot)"
+                "[Github](https://github.com/bariscodefxy/Hiro-Discord-Bot)"
             )
         );
-	$embed->setImage("https://raw.githubusercontent.com/novaguard-team/novaguard-bot/master/resources/zero-two-novaguard.gif");
+	$embed->setImage("https://raw.githubusercontent.com/bariscodefxy/Hiro-Discord-Bot/master/resources/zero-two-hiro.gif");
 	$embed->setThumbnail($this->discord->avatar);
         foreach ($this->loader->categories as $category) {
             $category_name = array_search($category, $this->loader->categories);

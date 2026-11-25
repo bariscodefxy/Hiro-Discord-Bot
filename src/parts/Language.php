@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file is part of project NovaGuard Discord Bot.
+ * This file is part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-namespace novaguard\parts;
+namespace hiro\parts;
 
 use Symfony\Component\Translation\Translator;
 use Symfony\Component\Translation\Loader\YamlFileLoader;

@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file is part of project NovaGuard Discord Bot.
+ * This file is part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@
  * limitations under the License.
  */
 
-namespace novaguard\commands;
+namespace hiro\commands;
 
-use novaguard\security\MusicCommand;
+use hiro\security\MusicCommand;
 use React\ChildProcess\Process;
 use Discord\Builders\MessageBuilder;
 use Discord\Helpers\Collection;
-use novaguard\parts\voice\VoiceFile;
+use hiro\parts\voice\VoiceFile;
 use React\Http\Browser;
 use Discord\Parts\Interactions\Command\Option;
 
@@ -67,8 +67,14 @@ class Play extends MusicCommand
         @unlink($author_id . ".m4a");
         @unlink($author_id . ".info.json");
 
-        $command = "./yt-dlp -f bestaudio[ext=m4a] --ignore-config --ignore-errors --write-info-json --output=./{$author_id}.m4a --audio-quality=0 \"{$settings->getQueue()[0]->getUrl()}\"";
-        $process = new Process($command);
+        $executable = (PHP_OS_FAMILY === 'Windows') ? 'yt-dlp.exe' : './yt-dlp';
+        $fds = (PHP_OS_FAMILY === 'Windows') ? [] : null;
+        $command = "{$executable} -f bestaudio[ext=m4a] --ignore-config --ignore-errors --write-info-json --output=./{$author_id}.m4a --audio-quality=0 \"{$settings->getQueue()[0]->getUrl()}\"";
+        $process = new Process($command, null, null, $fds ?? array(
+            array('pipe', 'r'),
+            array('pipe', 'w'),
+            array('pipe', 'w'),
+        ));
         $process->start();
 
         $editmsg = $text_channel->sendMessage($language->getTranslator()->trans('commands.play.downloading'));

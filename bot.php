@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,13 +20,13 @@
 
 include __DIR__ . '/vendor/autoload.php';
 
-use novaguard\NovaGuard;
+use hiro\Hiro;
 use Discord\Parts\User\Activity;
-use novaguard\parts\CommandLoader;
-use novaguard\parts\ArgumentParser;
-use novaguard\parts\PresenceManager;
+use hiro\parts\CommandLoader;
+use hiro\parts\ArgumentParser;
+use hiro\parts\PresenceManager;
 use Discord\WebSockets\Intents;
-use novaguard\Version;
+use hiro\Version;
 
 if (!isset($_ENV['TOKEN'])) {
     $dotenv = Dotenv\Dotenv::createImmutable("./");
@@ -35,7 +35,7 @@ if (!isset($_ENV['TOKEN'])) {
 
 if ( Version::TYPE == 'development' )
 {
-    error_reporting(E_ALL);
+    error_reporting(E_ALL & ~E_DEPRECATED);
 } else {
     error_reporting(0);
 }
@@ -44,14 +44,14 @@ global $shard_id, $shard_count;
 $ArgumentParser = new ArgumentParser($argv);
 $shard_id = $ArgumentParser->getShardId();
 $shard_count = $ArgumentParser->getShardCount();
-$bot = new NovaGuard([
+$bot = new Hiro([
     'token' => $_ENV['TOKEN'],
     'prefix' => $_ENV['PREFIX'],
     'shardId' => $shard_id,
     'shardCount' => $shard_count,
     'caseInsensitiveCommands' => true,
     'loadAllMembers' => @$_ENV['LOAD_ALL_MEMBERS'] ? true : false,
-    'intents' => Intents::getDefaultIntents() | Intents::GUILD_MEMBERS | Intents::MESSAGE_CONTENT
+    'intents' => Intents::getDefaultIntents() | Intents::GUILD_MEMBERS | Intents::MESSAGE_CONTENT,
 ]);
 $voiceSettings = [];
 

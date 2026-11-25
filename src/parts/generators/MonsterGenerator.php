@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  *
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,9 @@
  * limitations under the License.
  */
 
-namespace novaguard\parts\generators;
+namespace hiro\parts\generators;
 
-use novaguard\interfaces\{GeneratorReturn, GeneratorInterface};
+use hiro\interfaces\{GeneratorReturn, GeneratorInterface};
 
 class MonsterGenerator implements GeneratorInterface {
 
@@ -40,7 +40,7 @@ class MonsterGenerator implements GeneratorInterface {
      */
     public function generateRandom(): GeneratorReturn
     {
-        $class = "novaguard\\parts\\monster\\" . $this->monsters[random_int(0, sizeof($this->monsters) - 1)];
+        $class = "hiro\\parts\\monster\\" . $this->monsters[random_int(0, sizeof($this->monsters) - 1)];
 
         return new $class;
     }

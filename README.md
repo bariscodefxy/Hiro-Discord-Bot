@@ -1,6 +1,6 @@
-## NovaGuard Discord Bot
+## Hiro Discord Bot
 A Discord bot written in PHP.
-### Why NovaGuard Bot?
+### Why Hiro Bot?
 - 100% Open-source & Secure
 - Bot is using PHP language
   - PHP is fast learnable programming language that most using in the Web, so you can learn in average 1 week and you can fork this project and you can make your own bot
@@ -41,7 +41,7 @@ A Discord bot written in PHP.
 ##### Install Bot
 ###### Clone Repository to your PC/VPS
 ```
-git clone https://github.com/bariscodefxy/novaguard-bot.git
+git clone https://github.com/bariscodefxy/Hiro-Discord-Bot.git
 ```
 ###### Manual Download
 - Download from Code button

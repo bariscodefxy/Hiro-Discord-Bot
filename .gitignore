@@ -9,3 +9,4 @@ db-settings.inc
 .phpunit*
 build/
 bot.log
+.cache/

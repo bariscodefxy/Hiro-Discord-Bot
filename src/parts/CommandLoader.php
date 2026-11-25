@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  *
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@
  * limitations under the License.
  */
 
-namespace novaguard\parts;
+namespace hiro\parts;
 
 use Discord\Builders\MessageBuilder;
-use novaguard\database\Database;
-use novaguard\interfaces\NovaGuardInterface;
-use novaguard\interfaces\SecurityCommandInterface;
-use novaguard\parts\Respondable;
+use hiro\database\Database;
+use hiro\interfaces\HiroInterface;
+use hiro\interfaces\SecurityCommandInterface;
+use hiro\parts\Respondable;
 use Wujunze\Colors;
 use Discord\Discord;
 use Discord\Helpers\Collection;
@@ -71,7 +71,7 @@ class CommandLoader
     /**
      * CommandLoader Constructor
      */
-    public function __construct(NovaGuardInterface $client)
+    public function __construct(HiroInterface $client)
     {
         $this->client = $client;
         $this->colors = new Colors();
@@ -138,7 +138,7 @@ class CommandLoader
                     echo $e->getMessage() . " " . $e->getFile() . ":" . $e->getLine() . \PHP_EOL;
                 }
 
-                $classnamespace = 'novaguard\\commands\\' . $class;
+                $classnamespace = 'hiro\\commands\\' . $class;
                 $cmd = new $classnamespace($this->client, $this);
 
                 $this->print_color("Loading {$class}...", "yellow");
@@ -237,7 +237,7 @@ class CommandLoader
                     $cmd->handle($respondable, $args);
                 }
             } catch (\Throwable $e) {
-                if (\novaguard\Version::TYPE == 'development') {
+                if (\hiro\Version::TYPE == 'development') {
                     echo $e;
                 }
                 $respondable->reply("ERROR: `" . $e->getMessage() . "`");
@@ -298,7 +298,7 @@ class CommandLoader
             foreach($commands as $command) {
                 $cmd = $this->getCmd($command->name);
                 if(!$cmd || ($cmd && !in_array($cmd->category, $allowedCategories))) {
-                    $this->client->application->commands->delete($command->id)->done();
+                    $this->client->application->commands->delete($command->id);
                     $this->print_color("Command deleted: {$command->name}", "red");
                 }
             }

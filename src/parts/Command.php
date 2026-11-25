@@ -1,14 +1,14 @@
 <?php
 
-namespace novaguard\parts;
+namespace hiro\parts;
 
-use novaguard\interfaces\NovaGuardInterface;
+use hiro\interfaces\HiroInterface;
 
 class Command extends \Discord\CommandClient\Command
 {
 
     public function __construct(
-        NovaGuardInterface $client,
+        HiroInterface $client,
         string $command,
         callable $callable,
         string $description,

@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-namespace novaguard\commands;
+namespace hiro\commands;
 
 use Discord\Helpers\Collection;
 use Discord\Parts\Embed\Embed;
@@ -60,12 +60,12 @@ class Hug extends Command
     {
         global $language;
         $gifs = [
-            "https://bariscodefxy.github.io/cdn/novaguard/hug.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/hug_1.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/hug_2.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/hug_3.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/hug_4.gif",
-            "https://bariscodefxy.github.io/cdn/novaguard/hug_5.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/hug.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/hug_1.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/hug_2.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/hug_3.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/hug_4.gif",
+            "https://bariscodefxy.github.io/cdn/hiro/hug_5.gif",
         ];
         $random = $gifs[rand(0, sizeof($gifs) - 1)];
         $self = $msg->author;

@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,10 @@
  * limitations under the License.
  */
 
-namespace novaguard\commands;
+namespace hiro\commands;
 
 use Discord\Parts\Embed\Embed;
-use novaguard\Version;
+use hiro\Version;
 
 /**
  * Botinfo
@@ -48,7 +48,7 @@ class Botinfo extends Command
      * @param [type] $args
      * @return void
      */
-    public function handle(\novaguard\parts\Respondable $msg, $args): void
+    public function handle(\hiro\parts\Respondable $msg, $args): void
     {
         global $language;
         $guilds             = $this->discord->formatNumber(sizeof($this->discord->guilds));

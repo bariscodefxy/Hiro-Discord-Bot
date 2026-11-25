@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  * 
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,10 @@
  * limitations under the License.
  */
 
-namespace novaguard\commands;
+namespace hiro\commands;
 
 use Discord\Voice\VoiceClient;
-use novaguard\parts\voice\VoiceSettings;
+use hiro\parts\voice\VoiceSettings;
 
 class Join extends Command
 {
@@ -55,7 +55,7 @@ class Join extends Command
             return;
         }
 
-        $this->discord->joinVoiceChannel($channel, false, false, null, true)->done(function (VoiceClient $vc) use ($channel) {
+        $this->discord->joinVoiceChannel($channel, false, false)->then(function (VoiceClient $vc) use ($channel) {
             global $voiceSettings;
             
             $settings = new VoiceSettings($vc);

@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  *
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,9 @@
  * limitations under the License.
  */
 
-namespace novaguard\parts\generators;
+namespace hiro\parts\generators;
 
-use novaguard\interfaces\GeneratorReturn;
+use hiro\interfaces\GeneratorReturn;
 
 class GithubImageGenerator {
 
@@ -33,7 +33,7 @@ class GithubImageGenerator {
      */
     public static function generate(string $name, string $ext = ".jpg"): string
     {
-        $base = "https://raw.githubusercontent.com/bariscodefxy/NovaGuard-Discord-Bot/master/src/images/rpg/monsters/";
+        $base = "https://raw.githubusercontent.com/bariscodefxy/Hiro-Discord-Bot/master/src/images/rpg/monsters/";
 
         return $base . $name . $ext;
     }

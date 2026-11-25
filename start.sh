@@ -15,5 +15,5 @@ fi
 for i in `seq 1 $shards`;
 do
     id=$(expr $i - 1);
-    $(pm2 start bot.php -f --name "novaguard-bot" -- --shard-id $id --shard-count $shards) 2> /dev/null
+    $(pm2 start bot.php -f --name "hiro-bot" -- --shard-id $id --shard-count $shards) 2> /dev/null
 done

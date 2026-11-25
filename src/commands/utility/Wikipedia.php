@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of project NovaGuard Discord Bot.
+ * This file is part of project Hiro Discord Bot.
  *
  * Copyright 2023
  *
@@ -18,13 +18,13 @@
  * limitations under the License.
  */
 
-namespace novaguard\commands;
+namespace hiro\commands;
 
 use Discord\Helpers\Collection;
 use Discord\Parts\Embed\Embed;
 use Discord\Parts\Interactions\Command\Option;
-use novaguard\commands\Command;
-use novaguard\Version;
+use hiro\commands\Command;
+use hiro\Version;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
 

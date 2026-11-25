@@ -3,7 +3,7 @@
 /**
  * Copyright © 2025-present bariscodefx
  *
- * This file part of project NovaGuard Discord Bot.
+ * This file part of project Hiro Discord Bot.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,9 @@
  * limitations under the License.
  */
 
-namespace novaguard\interfaces;
+namespace hiro\interfaces;
 
-use novaguard\interfaces\GeneratorReturn;
+use hiro\interfaces\GeneratorReturn;
 
 /**
  * GeneratorInterface

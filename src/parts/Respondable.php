@@ -1,6 +1,6 @@
 <?php
 
-namespace novaguard\parts;
+namespace hiro\parts;
 
 use Discord\Parts\Interactions\Interaction;
 use Discord\Parts\Channel\Message;
@@ -11,7 +11,7 @@ use Discord\Parts\Embed\Embed;
 use Discord\Parts\Guild\Guild;
 use Discord\Parts\User\Member;
 use Discord\Parts\User\User;
-use React\Promise\ExtendedPromiseInterface;
+use React\Promise\Promise;
 
 class Respondable
 {
@@ -115,9 +115,9 @@ class Respondable
      * Reply method to reply to the message or interaction.
      *
      * @param string|Embed $message
-     * @return ExtendedPromiseInterface<Message>|null
+     * @return Promise<Message>|null
      */
-    public function reply(string|Embed $message): ?ExtendedPromiseInterface
+    public function reply(string|Embed $message): ?Promise
     {
         if ($this->respondable instanceof Interaction) {
             if ($message instanceof Embed) {
